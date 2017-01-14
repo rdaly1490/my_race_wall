@@ -1,0 +1,94 @@
+body
+	background offwhite
+
+h1
+	color red
+
+// ------------ Nav ------------ //
+
+.nav
+	background-color offblack
+	color lightgrey
+	height 65px
+	font-size 20px
+	display flex
+	div
+		height 100%
+		&.account
+			width: 100%
+			div
+				display flex
+				align-items center
+				float right
+				padding 20px
+				cursor pointer
+				&:hover
+					color lightyellow
+		&.logo
+			display flex
+			div
+				display flex
+				align-items center
+				padding 20px
+
+// ------------ HOMEPAGE ------------ //
+
+.hero-img
+	height calc(100vh - 65px)
+	background url('/running.jpg') no-repeat
+	background-position center
+
+// .slide-in
+//     opacity 0
+//     transition all .5s
+  //   &.active
+		// opacity 1
+		// transform translateX(0%) scale(1)
+
+.about
+	padding 50px
+	.info-block
+		display flex
+		flex-direction row
+		justify-content space-between
+		align-items center
+		.align-left
+			margin-right 20px
+			&.slide-in
+				opacity 0
+    //  			transition all .5s
+				// transform translateX(-30%) scale(0.95)
+				&.on-screen
+					opacity 1 !important
+					// transform translateX(0%) scale(1) !important
+		.align-right
+			margin-left 20px
+			&.slide-in
+				opacity 0
+     			// transition all .5s
+				// transform translateX(30%) scale(0.95)
+				&.on-screen
+					opacity 1 !important
+					// transform translateX(0%) scale(1) !important
+
+// .align-left
+// 	float:left;
+// 	margin-right:20px;
+
+// .align-right
+// 	float:right;
+// 	margin-left:20px;
+
+// .slide-in
+// 	opacity:0;
+// 	transition:all .5s;
+
+// .align-left.slide-in
+// 	transform:translateX(-30%) scale(0.95);
+
+// .align-right.slide-in
+// 	transform:translateX(30%) scale(0.95);
+
+// .slide-in.active
+// 	opacity:1;
+// 	transform:translateX(0%) scale(1);
