@@ -6,21 +6,28 @@ var config = require('./webpack.config.dev');
 var app = express();
 var compiler = webpack(config);
 
+app.engine('html', require('ejs').__express);
+app.set('views', __dirname + '/views');
+app.set('view engine', 'html');
+
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath
 }));
 
-app.use(express.static(__dirname + '/client/photos'));
+var staticDirs = ['photos', 'styles', 'otherJs'];
+staticDirs.forEach(function(dir) {
+	app.use(express.static(__dirname + '/client/' + dir));
+});
 
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'home1.html'));
+  res.render('home.html');
 });
 
 app.get('/racewall*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.render('index.html');
 });
 
 app.listen(7770, 'localhost', function(err) {
