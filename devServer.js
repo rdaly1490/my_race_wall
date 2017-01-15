@@ -26,7 +26,7 @@ app.get('/', function(req, res) {
   res.render('home.html');
 });
 
-app.get('/racewall*', function(req, res) {
+app.get('/*', function(req, res) {
   res.render('index.html');
 });
 

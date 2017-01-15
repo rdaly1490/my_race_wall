@@ -14,9 +14,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 const router = (
 	<Router history={browserHistory}>
-		<Route path="/racewall" component={Main}>
-			<IndexRoute component={HomePage}></IndexRoute>
-			<Route path="user" component={UserDash} />
+		<Route path="/" component={Main}>
+			<Route path="userdash" component={UserDash} />
 		</Route>
 	</Router>
 );

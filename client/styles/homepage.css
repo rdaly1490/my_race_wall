@@ -1,3 +1,10 @@
+/*
+font-family: 'Ultra', serif;
+font-family: 'Stint Ultra Expanded', cursive;
+font-family: 'Stint Ultra Condensed', cursive;
+font-family: 'Slabo 13px', serif;
+*/
+
 html {
 	box-sizing: border-box;
 	font-family: sans-serif;
@@ -50,6 +57,7 @@ nav div {
 .content {
 	position: absolute;
 	top: 0;
+	width: 100vw;
 }
 
 .hero-img {
@@ -74,7 +82,7 @@ nav div {
 }
 
 .constrict-width {
-	width: 75vw;
+	width: 80vw;
 }
 
 .info-block.right {
@@ -88,31 +96,49 @@ nav div {
 
 }
 
-.about .info-block:first-child {
-	color: #555555;
+.info-block.main {
 	background-color: #F7F7F7;
+	color: #555555;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.about .info-block:nth-child(2) {
+.info-block h1 {
+	font-family: 'Stint Ultra Expanded', cursive;
+	margin: 0;
+}
+
+.info-block.main p {
+	width: 50vw;
+}
+
+.info-block p {
+	font-family: 'Slabo 13px', serif;
+	letter-spacing: 0.8px;
+    line-height: 30px;
+}
+
+.info-block:nth-child(2) {
 	background-color: #2DC9D7;
 }
 
-.about .info-block:nth-child(3) {
+.info-block:nth-child(3) {
 	background-color: #AAAAAA;
 }
 
-.about .info-block:last-child {
+.info-block:last-child {
 	background-color: #FA6900;
 }
 
 .align-left {
 	float:left;
-	margin-right:20px;
+	margin-right:10vw;
 }
 
 .align-right {
 	float:right;
-	margin-left:20px;
+	margin-left:10vw;
 }
 
 .slide-in {
@@ -133,6 +159,7 @@ nav div {
 }
 
 footer {
+	height: 10vh;
 	background-color: #2B2B29;
 }
 
