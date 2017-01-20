@@ -42,7 +42,7 @@ nav div {
 	padding: 0 20px;
 }
 .account div:hover {
-	color: #FDFABC; /*lightyellow*/
+	color: #d4ccc8; /*slightly darker grey*/
 }
 
 .logo {
@@ -142,7 +142,7 @@ nav div {
 }
 
 .slide-in {
-	opacity:0;
+	opacity: 0;
 	transition:all .4s;
 }
 
@@ -163,3 +163,45 @@ footer {
 	background-color: #2B2B29;
 }
 
+.login-modal, .create-modal {
+	position: absolute;
+	opacity: 0;
+	height: 80vh;
+	width: 100vw;
+	top: -80vh;
+	background-color: #F7F7F7;
+	transition: all .5s;
+}
+
+.login-modal.active, .create-modal.active {
+	opacity: 1;
+	top: 0;
+}
+
+@media only screen and (max-width : 768px) {
+	.constrict-width {
+		flex-direction: column-reverse;
+		justify-content: center;
+	}
+	.constrict-width:first-child {
+		text-align: center;
+	}
+	.info-block.right .constrict-width {
+		flex-direction: column;
+		justify-content: center;
+	}
+	.about .info-block {
+		height: min-content;
+		justify-content: center;
+	}
+	.align-left.slide-in {
+		margin: 0;
+		opacity: 1;
+		transform:translateX(0%) scale(1);
+	}
+	.align-right.slide-in {
+		margin: 0;
+		opacity: 1;
+		transform:translateX(0%) scale(1);
+	}
+}

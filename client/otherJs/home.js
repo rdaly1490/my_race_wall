@@ -1,4 +1,11 @@
-function debounce(func, wait = 20, immediate = true) {
+const sliderImages = document.querySelectorAll('.slide-in');
+const loginBtn = document.querySelector('.login');
+const createBtn = document.querySelector('.create');
+const loginModal = document.querySelector('.login-modal');
+const createModal = document.querySelector('.create-modal');
+
+function debounce(func, wait = 15, immediate = true) {
+    if (window.innerWidth <= 768) return;
     var timeout;
     return function() {
         var context = this, args = arguments;
@@ -12,8 +19,6 @@ function debounce(func, wait = 20, immediate = true) {
         if (callNow) func.apply(context, args);
     };
 };
-
-const sliderImages = document.querySelectorAll('.slide-in');
 
 function checkSlide(e) {
     sliderImages.forEach(sliderImage => {
@@ -31,4 +36,15 @@ function checkSlide(e) {
     });
 }
 
+function displayModal(isLoginModal) {
+    const modalToToggleOn = isLoginModal ? loginModal : createModal;
+    const modalToToggleOff = isLoginModal ? createModal : loginModal;
+    if (modalToToggleOff.classList.contains('active')) {
+        modalToToggleOff.classList.remove('active');
+    }
+    modalToToggleOn.classList.toggle('active');
+}
+
 window.addEventListener('scroll', debounce(checkSlide));
+loginBtn.addEventListener('click', displayModal.bind(null, true));
+createBtn.addEventListener('click', displayModal.bind(null, false));
